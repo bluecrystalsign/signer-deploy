@@ -100,8 +100,12 @@ Vagrant.configure("2") do |config|
 	cp ~/signer-distibution/example.war /opt/tomcat/webapps/
 	cp ~/signer-distibution/bluc.war /opt/tomcat/webapps/
 	cp ~/signer-distibution/logback.xml /opt/tomcat/lib/
-	cp ~/signer-distibution/bluc.properties /opt/tomcat/lib/
 	cp ~/signer-distibution/tomcat.conf /etc/init/
+  	# as duas linhas abaixo são mutuamente exclusiva
+  	# se você precisar utilizar um certificado de testes.
+  	# troque os comentarios nas linhas abaixo
+  	# copie o arquivo "bluc.properties" para a mesma pasta do "Vagrantfile"
+  	# altere a linha: "CryptoService.validateCert=true" para "CryptoService.validateCert=false"
 	#
 	cd /opt/tomcat
 	rm  -rf acRepo
