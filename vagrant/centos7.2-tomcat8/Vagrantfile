@@ -106,8 +106,9 @@ Vagrant.configure("2") do |config|
 	  	cd /opt/tomcat
 	  	rm  -rf acRepo
 	  	mkdir acRepo
-	  	unzip ~/signer-distibution/AcRepo.zip -d acRepo
-	  	sudo chown -R tomcat webapps/ lib/ acRepo/
+		mkdir uploaded
+		unzip ~/signer-distibution/AcRepo.zip -d acRepo
+		sudo chown -R tomcat webapps/ lib/ acRepo/ uploaded/
 	  	#
 	  	cp ~/signer-distibution/tomcat.service /etc/systemd/system/
 	  	sudo systemctl daemon-reload
